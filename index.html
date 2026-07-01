@@ -1,2 +1,833 @@
-<h1>Tailcoded Studio</h1>
-<p>We build software systems for education and businesses.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Tailcoded Studio | Software Development &amp; Web Solutions</title>
+  <meta name="description" content="Solo software studio building web apps, mobile apps, and custom systems. Clean, modern, reliable software solutions for academic and real-world use cases." />
+  <meta name="keywords"    content="software developer, full stack developer, React developer, .NET developer, Tailcoded Studio, Sri Lanka, web development, mobile app development" />
+  <meta name="author"      content="Tailcoded Studio" />
+  <meta name="robots"      content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://tailcoded.studio/" />
+  <meta property="og:title"       content="Tailcoded Studio | Software Development &amp; Web Solutions" />
+  <meta property="og:description" content="Solo software studio building web apps, mobile apps, and custom systems. Clean, reliable, modern software that solves real problems." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Tailcoded Studio | Software Development &amp; Web Solutions" />
+  <meta name="twitter:description" content="Solo software studio building web apps, mobile apps, and custom systems." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="tailcoded-favicon-bl.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="wrap nav-inner">
+
+    <a href="#hero" class="nav-logo" aria-label="Tailcoded Studio home">
+      <img src="tailcoded-logo.png" alt="Tailcoded Studio" class="nav-logo-img" />
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#hero"      class="nav-link" data-section="hero">Home</a></li>
+      <li><a href="#about"     class="nav-link" data-section="about">About</a></li>
+      <li><a href="#services"  class="nav-link" data-section="services">Services</a></li>
+      <li><a href="#why"       class="nav-link" data-section="why">Why Me</a></li>
+      <li><a href="#developer" class="nav-link" data-section="developer">Developer</a></li>
+      <li><a href="#projects"  class="nav-link" data-section="projects">Projects</a></li>
+      <a href="#contact" class="nav-cta" id="nav-cta-btn">Contact</a>
+    </ul>
+
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobile menu">
+  <a href="#hero"      class="nav-link" data-section="hero">Home</a>
+  <a href="#about"     class="nav-link" data-section="about">About</a>
+  <a href="#services"  class="nav-link" data-section="services">Services</a>
+  <a href="#why"       class="nav-link" data-section="why">Why Me</a>
+  <a href="#developer" class="nav-link" data-section="developer">Developer</a>
+  <a href="#projects"  class="nav-link" data-section="projects">Projects</a>
+  <a href="#contact"   class="nav-cta">Contact Me</a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════ -->
+<section id="hero" aria-labelledby="hero-h1">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+
+    <!-- ── Left: Copy ─────────────────────────── -->
+    <div class="hero-copy sr sr-l">
+
+      <h1 id="hero-h1" class="hero-title">
+        Building modern<br/>
+        software solutions<br/>
+        <span class="line2">that matter.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Solo software studio focused on web apps, mobile apps,
+        and custom systems delivering clean, performant, and
+        user-friendly digital products.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary" id="hero-btn-services">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          View Services
+        </a>
+        <a href="#contact" class="btn btn-outline" id="hero-btn-contact">
+          Contact Me
+        </a>
+      </div>
+
+      <!-- <div class="hero-stats">
+        <div>
+          <div class="hero-stat-val" data-count="10" data-suffix="+">10+</div>
+          <div class="hero-stat-lbl">Projects Delivered</div>
+        </div>
+        <div>
+          <div class="hero-stat-val" data-count="3" data-suffix="+">3+</div>
+          <div class="hero-stat-lbl">Years of Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-val" data-count="100" data-suffix="%">100%</div>
+          <div class="hero-stat-lbl">Passion Driven</div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- ── Right: Visual ──────────────────────── -->
+    <div class="hero-visual sr sr-r" aria-hidden="true">
+      <div class="hero-card-wrap">
+
+        <!-- Floating badge top-left -->
+        <div class="hero-float hero-float--1">
+          <div class="hero-float-icon hero-float-icon--p">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div>
+            <span class="hero-float-label">Tech Stack</span>
+            <span class="hero-float-val">React · .NET · SQL</span>
+          </div>
+        </div>
+
+        <!-- Code window -->
+        <div class="hero-window">
+          <div class="hero-window-bar">
+            <span class="hero-window-dot"></span>
+            <span class="hero-window-dot"></span>
+            <span class="hero-window-dot"></span>
+            <span class="hero-window-title">tailcoded-studio/api/services.cs</span>
+          </div>
+          <div class="hero-window-body">
+            <div><span class="c-muted">// Tailcoded Studio - 2026</span></div>
+            <div>&nbsp;</div>
+            <div><span class="c-purple">namespace</span> <span class="c-blue">TailcodedStudio</span></div>
+            <div>{</div>
+            <div>&nbsp;&nbsp;<span class="c-purple">public class</span> <span class="c-yellow">StudioService</span></div>
+            <div>&nbsp;&nbsp;{</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">private readonly</span> <span class="c-blue">IRepository</span> <span class="c-orange">_repo</span>;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">public async</span> <span class="c-blue">Task</span>&lt;<span class="c-green">Project</span>&gt;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">BuildSolution</span>(<span class="c-blue">string</span> <span class="c-orange">idea</span>)</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;{</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">var</span> <span class="c-orange">plan</span> = <span class="c-purple">await</span> <span class="c-orange">_repo</span></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="c-yellow">DesignAsync</span>(<span class="c-orange">idea</span>);</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">return await</span> <span class="c-yellow">DeployAsync</span>(<span class="c-orange">plan</span>);</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+            <div>&nbsp;&nbsp;}</div>
+            <div>}</div>
+          </div>
+        </div>
+
+        <!-- Floating badge bottom-right -->
+        <div class="hero-float hero-float--2">
+          <div class="hero-float-icon hero-float-icon--n">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <span class="hero-float-label">Status</span>
+            <span class="hero-float-val">Available for Projects</span>
+          </div>
+        </div>
+
+        <!-- Dot grid decoration -->
+        <div class="hero-dots" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     ABOUT / VISION
+══════════════════════════════════════════════════════ -->
+<section id="about" class="section section--tinted" aria-labelledby="about-h2">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <!-- Story card -->
+      <div class="sr sr-l">
+        <div class="about-card">
+          <div class="about-card-icon" aria-hidden="true">
+            <!-- Laptop illustration icon -->
+            <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="6" width="22" height="14" rx="2" stroke="white" stroke-width="2" fill="none"/>
+              <path d="M2 22h26" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 18l2-2 2 2 4-5" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>What We're About</h3>
+          <p>
+            Tailcoded Studio was launched in 2026 in Sri Lanka, founded with a simple goal 
+            to build <strong>clean, reliable, and modern software solutions</strong> that actually
+            solve real problems. What started as a solo developer's passion grew into a focused
+            studio identity for designing and developing websites, web applications, and technical
+            systems for both academic and real-world use cases.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vision list -->
+      <div class="sr sr-r">
+        <p class="eyebrow">Our Vision</p>
+        <h2 id="about-h2" class="h2">
+          Turning ideas into<br/>
+          <em>real digital products</em>
+        </h2>
+        <p class="lead" style="margin-bottom:32px;">
+          A personal development space where ideas become functional,
+          user-friendly products with a strong focus on simplicity,
+          performance, and modern design.
+        </p>
+
+        <div class="vision-list">
+          <div class="vision-item">
+            <div class="vision-num" aria-hidden="true">01</div>
+            <div class="vision-text">
+              <strong>Modern &amp; Scalable Architecture</strong>
+              <p>Software that grows with you clean, maintainable, and production-ready from day one.</p>
+            </div>
+          </div>
+          <div class="vision-item">
+            <div class="vision-num" aria-hidden="true">02</div>
+            <div class="vision-text">
+              <strong>Usability &amp; Performance First</strong>
+              <p>Every product is designed to be fast, intuitive, and a pleasure to use.</p>
+            </div>
+          </div>
+          <div class="vision-item">
+            <div class="vision-num" aria-hidden="true">03</div>
+            <div class="vision-text">
+              <strong>Passion-Driven Development</strong>
+              <p>Every line of code is written with genuine care and enthusiasm for the craft.</p>
+            </div>
+          </div>
+          <div class="vision-item">
+            <div class="vision-num" aria-hidden="true">04</div>
+            <div class="vision-text">
+              <strong>Continuous Learning &amp; Growth</strong>
+              <p>Always improving, always exploring new technologies to deliver cutting-edge solutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════════════ -->
+<section id="services" class="section" aria-labelledby="services-h2">
+  <div class="wrap">
+
+    <div class="sr" style="margin-bottom:48px;">
+      <p class="eyebrow">What We Do</p>
+      <h2 id="services-h2" class="h2">Our <em>Services</em></h2>
+      <p class="lead">Practical, modern digital solutions functional, clean, responsive, and easy to use.</p>
+    </div>
+
+    <!-- Intro banner -->
+    <div class="services-intro sr d1">
+      <div class="services-intro-inner">
+        <p>
+          Tailcoded Studio specializes in building practical and modern digital solutions tailored
+          to different needs. We develop web applications, mobile applications, and custom software
+          systems including dashboards, management systems, and university-level projects. Each
+          solution is built with attention to performance, usability, and scalable structure.
+          Whether it's a personal project, academic system, or business idea the goal is always
+          the same: <strong>turn ideas into working digital products.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- Service cards -->
+    <div class="services-grid">
+
+      <div class="svc-card sr d1">
+        <div class="svc-icon svc-icon-p" aria-hidden="true">
+          <!-- Globe/Web icon -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Web Development</h3>
+        <p>Responsive websites and web applications built with React, Vite, and modern frameworks fast, accessible, and beautifully designed.</p>
+      </div>
+
+      <div class="svc-card sr d2">
+        <div class="svc-icon svc-icon-n" aria-hidden="true">
+          <!-- Phone icon -->
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Mobile App Development</h3>
+        <p>Clean, performant mobile applications designed for real-world usage with a focus on intuitive UX and cross-platform compatibility.</p>
+      </div>
+
+      <div class="svc-card sr d3">
+        <div class="svc-icon svc-icon-m" aria-hidden="true">
+          <!-- Database icon -->
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3>System Development</h3>
+        <p>CRUD systems, admin panels, university-level projects, and management dashboards robust, maintainable, and structured for scale.</p>
+      </div>
+
+      <div class="svc-card sr d1">
+        <div class="svc-icon svc-icon-p" aria-hidden="true">
+          <!-- Settings/Custom icon -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 0 0 4.93 19.07M4.93 4.93A10 10 0 0 1 19.07 19.07"/></svg>
+        </div>
+        <h3>Custom Software Solutions</h3>
+        <p>Tailored software built around your specific requirements from concept to deployment, designed to solve real problems efficiently.</p>
+      </div>
+
+      <div class="svc-card sr d2">
+        <div class="svc-icon svc-icon-n" aria-hidden="true">
+          <!-- API/Server icon -->
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <h3>Backend &amp; API Development</h3>
+        <p>Scalable REST APIs, JWT-secured services, and clean backend architecture using .NET Core built for performance and reliability.</p>
+      </div>
+
+      <div class="svc-card sr d3">
+        <div class="svc-icon svc-icon-m" aria-hidden="true">
+          <!-- Code icon -->
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Full-Stack Solutions</h3>
+        <p>End-to-end development from database design to pixel-perfect UI complete full-stack systems delivered as a cohesive, polished product.</p>
+      </div>
+
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="tech-wrap sr">
+      <div class="tech-header">
+        <div class="tech-header-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Tech Stack I Use</h3>
+      </div>
+
+      <div class="tech-grid">
+        <div>
+          <div class="tech-group-label">Frontend</div>
+          <div class="tech-chips">
+            <span class="chip chip-p">React</span>
+            <span class="chip chip-p">Vite</span>
+            <span class="chip chip-p">HTML5</span>
+            <span class="chip chip-p">CSS3</span>
+            <span class="chip chip-p">Tailwind CSS</span>
+          </div>
+        </div>
+        <div>
+          <div class="tech-group-label">Backend</div>
+          <div class="tech-chips">
+            <span class="chip chip-n">.NET / ASP.NET Core</span>
+            <span class="chip chip-n">Node.js</span>
+            <span class="chip chip-n">REST APIs</span>
+            <span class="chip chip-n">JWT Auth</span>
+          </div>
+        </div>
+        <div>
+          <div class="tech-group-label">Database</div>
+          <div class="tech-chips">
+            <span class="chip chip-g">SQL Server</span>
+            <span class="chip chip-g">PostgreSQL</span>
+            <span class="chip chip-g">Entity Framework Core</span>
+          </div>
+        </div>
+        <div>
+          <div class="tech-group-label">Tools &amp; DevOps</div>
+          <div class="tech-chips">
+            <span class="chip chip-g">Docker</span>
+            <span class="chip chip-g">Git &amp; GitHub</span>
+            <span class="chip chip-g">Azure</span>
+            <span class="chip chip-g">Swagger</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     WHY ME
+══════════════════════════════════════════════════════ -->
+<section id="why" class="section section--tinted" aria-labelledby="why-h2">
+  <div class="wrap">
+
+    <div class="sr" style="margin-bottom:48px;">
+      <p class="eyebrow">The Difference</p>
+      <h2 id="why-h2" class="h2">Why <em>Choose Me?</em></h2>
+      <p class="lead">Working with a solo developer means better communication, faster iteration, and real ownership of your project.</p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card sr d1">
+        <div class="why-card-num">01</div>
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Direct Communication</h3>
+        <p>Talk directly to the developer building your project. No middlemen, no delays just clear, honest communication.</p>
+      </div>
+
+      <div class="why-card sr d2">
+        <div class="why-card-num">02</div>
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Fast Iteration</h3>
+        <p>Quick turnaround on feedback and changes. Solo development means fewer bottlenecks and faster delivery of working features.</p>
+      </div>
+
+      <div class="why-card sr d3">
+        <div class="why-card-num">03</div>
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Clean Architecture</h3>
+        <p>Code that is readable, maintainable, and built to last structured with best practices so future changes are painless.</p>
+      </div>
+
+      <div class="why-card sr d1">
+        <div class="why-card-num">04</div>
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>UI/UX Focus</h3>
+        <p>Every interface is designed to be beautiful and intuitive. Performance and visual quality are never compromised.</p>
+      </div>
+
+      <div class="why-card sr d2">
+        <div class="why-card-num">05</div>
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Full-Stack Experience</h3>
+        <p>End-to-end capability across frontend, backend, databases, and deployment. One developer who owns the full picture.</p>
+      </div>
+
+      <div class="why-card sr d3">
+        <div class="why-card-num">06</div>
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Passion-Driven</h3>
+        <p>This isn't just a job every project is approached with genuine enthusiasm and a commitment to building something excellent.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     ABOUT DEVELOPER
+══════════════════════════════════════════════════════ -->
+<section id="developer" class="section" aria-labelledby="developer-h2">
+  <div class="wrap">
+    <div class="dev-grid">
+
+      <!-- Image -->
+      <div class="sr sr-l">
+        <div class="dev-img-wrap">
+          <div class="dev-img-bg" aria-hidden="true"></div>
+          <div class="dev-img">
+            <img src="developer-avatar.png" alt="Solo developer behind Tailcoded Studio — a full-stack software engineer based in Sri Lanka" loading="lazy" />
+          </div>
+          <div class="dev-floating-badge" aria-label="Full-Stack Developer — Available for projects">
+            <div class="dev-fb-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <span class="dev-fb-label">Full-Stack Developer</span>
+              <span class="dev-fb-val">Available for Projects ✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="sr sr-r">
+        <p class="eyebrow">About The Developer</p>
+        <h2 id="developer-h2" class="dev-name">
+          The Solo Dev Behind<br/>
+          <span class="grad-text">Tailcoded Studio</span>
+        </h2>
+        <div class="dev-role">Software Engineer &amp; Full-Stack Developer</div>
+
+        <p class="dev-bio">
+          I'm the solo developer behind Tailcoded Studio passionate about building real-world
+          systems and university projects with clean architecture and modern UI design.
+        </p>
+        <p class="dev-bio">
+          My focus is on scalable backend systems, intuitive frontend interfaces, and everything
+          in between. I believe great software is born from the intersection of engineering
+          discipline and design sensibility.
+        </p>
+        <p class="dev-bio">
+          Based in Sri Lanka 🇱🇰, continuously improving my craft, exploring modern technologies,
+          and turning ideas into polished digital products that make a difference.
+        </p>
+
+        <div class="dev-chips">
+          <span class="chip chip-p">React</span>
+          <span class="chip chip-p">.NET Core</span>
+          <span class="chip chip-n">SQL Server</span>
+          <span class="chip chip-n">PostgreSQL</span>
+          <span class="chip chip-g">Docker</span>
+          <span class="chip chip-g">Azure</span>
+          <span class="chip chip-p">REST APIs</span>
+          <span class="chip chip-g">Git</span>
+          <span class="chip chip-n">Entity Framework</span>
+        </div>
+
+        <div class="dev-links">
+          <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" id="dev-github-btn" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" style="fill:currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#contact" class="btn btn-primary" id="dev-contact-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Get In Touch
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PROJECTS
+══════════════════════════════════════════════════════ -->
+<section id="projects" class="section section--tinted" aria-labelledby="projects-h2">
+  <div class="wrap">
+
+    <div class="sr" style="margin-bottom:48px;">
+      <p class="eyebrow">Portfolio</p>
+      <h2 id="projects-h2" class="h2">Featured <em>Projects</em></h2>
+      <p class="lead">A selection of real-world and academic projects built with modern tech stacks.</p>
+    </div>
+
+    <div class="proj-grid">
+
+      <article class="proj-card sr d1">
+        <div class="proj-top">
+          <span class="proj-type">Full-Stack</span>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <h3>University Management System</h3>
+        <p>Complete academic management with student registration, course management, grade tracking, and admin dashboard.</p>
+        <div class="proj-techs">
+          <span class="chip chip-p">React</span>
+          <span class="chip chip-n">.NET Core</span>
+          <span class="chip chip-g">SQL Server</span>
+          <span class="chip chip-g">JWT</span>
+        </div>
+      </article>
+
+      <article class="proj-card sr d2">
+        <div class="proj-top">
+          <span class="proj-type">Web App</span>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <h3>Inventory &amp; Admin Dashboard</h3>
+        <p>Real-time inventory tracking with role-based access, analytics charts, and CRUD operations for business management.</p>
+        <div class="proj-techs">
+          <span class="chip chip-p">Vite</span>
+          <span class="chip chip-n">ASP.NET</span>
+          <span class="chip chip-g">PostgreSQL</span>
+          <span class="chip chip-g">Docker</span>
+        </div>
+      </article>
+
+      <article class="proj-card sr d3">
+        <div class="proj-top">
+          <span class="proj-type">API System</span>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <h3>Secure REST API Platform</h3>
+        <p>Scalable REST API with JWT authentication, Entity Framework Core data access, Swagger docs, and clean layered architecture.</p>
+        <div class="proj-techs">
+          <span class="chip chip-n">.NET 8</span>
+          <span class="chip chip-n">EF Core</span>
+          <span class="chip chip-g">SQL Server</span>
+          <span class="chip chip-g">Swagger</span>
+        </div>
+      </article>
+
+      <article class="proj-card sr d1">
+        <div class="proj-top">
+          <span class="proj-type">Frontend</span>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <h3>E-Commerce Web Interface</h3>
+        <p>Modern storefront with product filtering, cart management, responsive design, and smooth user experience.</p>
+        <div class="proj-techs">
+          <span class="chip chip-p">React</span>
+          <span class="chip chip-p">Tailwind CSS</span>
+          <span class="chip chip-g">Vite</span>
+          <span class="chip chip-g">REST API</span>
+        </div>
+      </article>
+
+      <article class="proj-card sr d2">
+        <div class="proj-top">
+          <span class="proj-type">Academic</span>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <h3>Library Management System</h3>
+        <p>Full-featured library CRUD with book borrowing workflows, member management, fine calculations, and reporting.</p>
+        <div class="proj-techs">
+          <span class="chip chip-n">.NET MVC</span>
+          <span class="chip chip-g">SQL Server</span>
+          <span class="chip chip-g">Bootstrap</span>
+          <span class="chip chip-g">EF Core</span>
+        </div>
+      </article>
+
+      <article class="proj-card sr d3">
+        <div class="proj-top">
+          <span class="proj-type">Cloud / DevOps</span>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <h3>Dockerized Deployment Pipeline</h3>
+        <p>Containerized full-stack application on Azure with Docker Compose, automated GitHub CI/CD, and environment-based config.</p>
+        <div class="proj-techs">
+          <span class="chip chip-g">Docker</span>
+          <span class="chip chip-g">Azure</span>
+          <span class="chip chip-g">GitHub Actions</span>
+          <span class="chip chip-n">.NET</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════════════ -->
+<section id="contact" class="section" aria-labelledby="contact-h2">
+  <div class="wrap">
+
+    <div class="sr" style="margin-bottom:48px;">
+      <p class="eyebrow">Get In Touch</p>
+      <h2 id="contact-h2" class="h2">Let's <em>Work Together</em></h2>
+      <p class="lead">Have a project in mind? Let's talk. I'm always open to discussing new ideas and opportunities.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="sr sr-l">
+        <h3 class="contact-info-h3">Let's build something great</h3>
+        <p class="contact-info-p">
+          Whether you have a specific project requirement or just want to explore possibilities
+          I'd love to hear from you. Reach out through the form or any of the channels below.
+        </p>
+
+        <div class="contact-items">
+          <a href="mailto:hello@tailcoded.studio" class="contact-item" id="contact-email" aria-label="Email Tailcoded Studio">
+            <div class="contact-item-icon ci-p" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="contact-item-lbl">Email</span>
+              <span class="contact-item-val">hello@tailcoded.studio</span>
+            </div>
+          </a>
+
+          <a href="https://wa.me/94700000000" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-whatsapp" aria-label="Message on WhatsApp">
+            <div class="contact-item-icon ci-g" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div>
+              <span class="contact-item-lbl">WhatsApp Business</span>
+              <span class="contact-item-val">+94 70 000 0000</span>
+            </div>
+          </a>
+
+          <div class="contact-item">
+            <div class="contact-item-icon ci-b" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <span class="contact-item-lbl">Location</span>
+              <span class="contact-item-val">Sri Lanka 🇱🇰</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-reply">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Usually replies within <strong>&nbsp;24–48 hours</strong>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form sr sr-r">
+        <h3 class="form-title">Send a Message</h3>
+
+        <div id="form-body">
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Your Name</label>
+              <input class="form-input" type="text" id="contact-name" name="name" placeholder="e.g. John Doe" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email-field">Email Address</label>
+              <input class="form-input" type="email" id="contact-email-field" name="email" placeholder="e.g. john@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Subject</label>
+              <input class="form-input" type="text" id="contact-subject" name="subject" placeholder="e.g. Project Collaboration" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Your Message</label>
+              <textarea class="form-textarea" id="contact-message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="contact-submit-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <div id="form-success" class="form-success" aria-live="polite">
+          <div class="form-success-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Message Sent! 🎉</h3>
+          <p>Thanks for reaching out. I'll get back to you within 24–48 hours.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="#hero" class="footer-logo" aria-label="Tailcoded Studio — back to top">
+        <img src="tailcoded-logo-bw.png" alt="Tailcoded Studio" class="footer-logo-img" />
+      </a>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Me</a>
+        <a href="#developer">Developer</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Tailcoded Studio. All rights reserved.</p>
+      <p class="footer-tagline">Built by a solo developer with passion for clean code.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Scroll-down hint (shown at top of page) -->
+<div id="scroll-hint" aria-hidden="true">
+  <svg viewBox="0 0 24 24">
+    <path d="M12 5v14M5 12l7 7 7-7"/>
+  </svg>
+  <span>Scroll Down</span>
+</div>
+
+<!-- Scroll-to-top button (shown after scrolling) -->
+<button id="scroll-top" aria-label="Scroll to top of page">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script src="main.js"></script>
+</body>
+</html>
