@@ -977,37 +977,51 @@ svg {
 .svc-icon {
   width: 52px;
   height: 52px;
-  border-radius: 14px;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  transition: var(--t);
+  transition: all 0.4s var(--ease);
+  color: #fff;
 }
 
 .svc-card:hover .svc-icon {
-  transform: scale(1.08);
+  transform: translateY(-2px) scale(1.05) rotate(5deg);
+  border-radius: 40% 60% 70% 30% / 40% 50% 50% 60%;
 }
 
 .svc-icon-p {
   background: linear-gradient(135deg, var(--purple), #5b21b6);
-  box-shadow: 0 4px 14px rgba(124, 58, 237, .3);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.18);
+}
+
+.svc-card:hover .svc-icon-p {
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
 }
 
 .svc-icon-n {
-  background: linear-gradient(135deg, var(--neon), #0e7490);
-  box-shadow: 0 4px 14px rgba(6, 182, 212, .25);
+  background: linear-gradient(135deg, var(--neon), #0891b2);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.15);
+}
+
+.svc-card:hover .svc-icon-n {
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.3);
 }
 
 .svc-icon-m {
   background: linear-gradient(135deg, #a78bfa, var(--neon));
-  box-shadow: 0 4px 14px rgba(124, 58, 237, .2);
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.15);
+}
+
+.svc-card:hover .svc-icon-m {
+  box-shadow: 0 8px 24px rgba(167, 139, 250, 0.28);
 }
 
 .svc-icon svg {
   width: 26px;
   height: 26px;
-  fill: #fff;
+  fill: currentColor;
 }
 
 .svc-card h3 {
@@ -1043,17 +1057,19 @@ svg {
 .tech-header-icon {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
-  background: var(--purple);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  background: linear-gradient(135deg, var(--purple), #5b21b6);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.18);
 }
 
 .tech-header-icon svg {
   width: 26px;
   height: 26px;
-  fill: #fff;
+  fill: currentColor;
 }
 
 .tech-header h3 {
@@ -1184,24 +1200,27 @@ svg {
 .why-card-icon {
   width: 46px;
   height: 46px;
-  border-radius: 12px;
-  background: var(--purple);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  background: linear-gradient(135deg, var(--purple), #5b21b6);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  box-shadow: 0 4px 14px rgba(124, 58, 237, .28);
-  transition: var(--t);
+  transition: all 0.4s var(--ease);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.18);
 }
 
 .why-card:hover .why-card-icon {
-  box-shadow: 0 6px 20px rgba(124, 58, 237, .38);
+  border-radius: 40% 60% 70% 30% / 40% 50% 50% 60%;
+  transform: translateY(-2px) scale(1.05) rotate(-5deg);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
 }
 
 .why-card-icon svg {
   width: 22px;
   height: 22px;
-  fill: #fff;
+  fill: currentColor;
 }
 
 .why-card h3 {
@@ -1276,18 +1295,20 @@ svg {
 .dev-fb-icon {
   width: 38px;
   height: 38px;
-  border-radius: 10px;
-  background: var(--purple);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  background: linear-gradient(135deg, var(--purple), #5b21b6);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.18);
 }
 
 .dev-fb-icon svg {
   width: 20px;
   height: 20px;
-  fill: #fff;
+  fill: currentColor;
 }
 
 .dev-fb-label {
@@ -1520,29 +1541,33 @@ svg {
 .contact-item-icon {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: #fff;
 }
 
 .ci-p {
-  background: var(--purple);
+  background: linear-gradient(135deg, var(--purple), #5b21b6);
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.15);
 }
 
 .ci-g {
   background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);
 }
 
 .ci-b {
   background: linear-gradient(135deg, var(--neon), #0e7490);
+  box-shadow: 0 4px 10px rgba(6, 182, 212, 0.15);
 }
 
 .contact-item-icon svg {
   width: 18px;
   height: 18px;
-  fill: #fff;
+  fill: currentColor;
 }
 
 .contact-item-lbl {
