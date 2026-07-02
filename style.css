@@ -773,7 +773,6 @@ svg {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--purple), var(--neon));
 }
 
 .about-card-icon {
@@ -1049,7 +1048,7 @@ svg {
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 }
 
@@ -1075,7 +1074,7 @@ svg {
 .tech-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 20px;
 }
 
 .chip {
