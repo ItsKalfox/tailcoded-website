@@ -65,7 +65,16 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 40%, rgba(124, 58, 237, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 15% 70%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(124, 58, 237, 0.08) 0%, transparent 45%);
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed;
   color: var(--ink);
   line-height: 1.6;
   overflow-x: hidden;
@@ -106,10 +115,14 @@ svg {
 
 .section {
   padding: 96px 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 400' preserveAspectRatio='none'%3E%3Cpath fill='%237c3aed' fill-opacity='0.07' d='M0,100 C350,200 700,50 1050,150 C1250,200 1380,120 1440,100 L1440,400 L0,400 Z'%3E%3C/path%3E%3Cpath fill='%2306b6d4' fill-opacity='0.05' d='M0,220 C400,320 800,180 1100,260 C1250,300 1380,240 1440,220 L1440,400 L0,400 Z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: bottom center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 .section--tinted {
-  background: var(--bg-2);
+  background-color: rgba(244, 243, 255, 0.45);
 }
 
 /* ── Typography helpers ────────────────────────────────── */
@@ -438,7 +451,11 @@ svg {
   padding-top: var(--nav-h);
   display: flex;
   align-items: center;
-  background: #fff;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%237c3aed' fill-opacity='0.08' d='M0,96 C280,150 560,50 840,110 C1120,170 1280,120 1360,95 L1440,70 L1440,320 L1360,320 C1280,320 1120,320 960,320 C800,320 640,320 480,320 C320,320 160,320 80,320 L0,320 Z'%3E%3C/path%3E%3Cpath fill='%2306b6d4' fill-opacity='0.06' d='M0,160 C320,220 640,100 960,180 C1120,220 1280,180 1360,160 L1440,140 L1440,320 L0,320 Z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: bottom center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -745,7 +762,7 @@ svg {
    ABOUT
 ══════════════════════════════════════════════════════════ */
 #about {
-  background: var(--bg-2);
+  background-color: rgba(244, 243, 255, 0.45);
 }
 
 .about-grid {
@@ -884,7 +901,7 @@ svg {
 /* ══════════════════════════════════════════════════════════
    SERVICES
 ══════════════════════════════════════════════════════════ */
-#services {}
+
 
 .services-intro {
   background: var(--ink);
@@ -1128,7 +1145,7 @@ svg {
    WHY ME
 ══════════════════════════════════════════════════════════ */
 #why {
-  background: var(--bg-2);
+  background-color: rgba(244, 243, 255, 0.45);
 }
 
 .why-grid {
@@ -1337,7 +1354,7 @@ svg {
    PROJECTS
 ══════════════════════════════════════════════════════════ */
 #projects {
-  background: var(--bg-2);
+  background-color: rgba(244, 243, 255, 0.45);
 }
 
 .proj-grid {
@@ -1951,6 +1968,11 @@ footer {
 
   .section {
     padding: 72px 0;
+    background-size: 240% auto;
+  }
+
+  #hero {
+    background-size: 240% auto;
   }
 
   .nav-links,
