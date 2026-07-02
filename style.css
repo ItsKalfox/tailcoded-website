@@ -294,9 +294,9 @@ svg {
 }
 
 #navbar.scrolled {
-  background: rgba(255, 255, 255, .72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, .45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   box-shadow: 0 1px 0 var(--border), var(--shadow-s);
 }
 
@@ -1972,7 +1972,12 @@ footer {
   }
 
   #hero {
-    background-size: 240% auto;
+    background-image: 
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%237c3aed' fill-opacity='0.11' d='M0,96 C280,150 560,50 840,110 C1120,170 1280,120 1360,95 L1440,70 L1440,320 L1360,320 C1280,320 1120,320 960,320 C800,320 640,320 480,320 C320,320 160,320 80,320 L0,320 Z'%3E%3C/path%3E%3Cpath fill='%2306b6d4' fill-opacity='0.08' d='M0,160 C320,220 640,100 960,180 C1120,220 1280,180 1360,160 L1440,140 L1440,320 L0,320 Z'%3E%3C/path%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%2306b6d4' fill-opacity='0.09' d='M0,160 C320,220 640,100 960,180 C1120,220 1280,180 1360,160 L1440,140 L1440,320 L0,320 Z'%3E%3C/path%3E%3C/svg%3E");
+    background-position: bottom center, 32% center;
+    background-size: 240% auto, 240% auto;
+    background-repeat: no-repeat, no-repeat;
   }
 
   .nav-links,
@@ -1986,15 +1991,36 @@ footer {
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 0;
     padding-top: 40px;
     padding-bottom: 40px;
     min-height: auto;
   }
 
+  .hero-copy {
+    display: contents;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-title {
+    order: 1;
+    margin-bottom: 16px;
+    font-size: 2.2rem;
+  }
+
+  .hero-sub {
+    order: 2;
+    margin-bottom: 64px;
+    font-size: 1rem;
+  }
+
   .hero-visual {
     display: flex;
     justify-content: center;
+    order: 3;
+    margin-bottom: 64px;
   }
 
   .hero-card-wrap {
@@ -2009,12 +2035,9 @@ footer {
     right: -10px;
   }
 
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-sub {
-    font-size: 1rem;
+  .hero-actions {
+    order: 4;
+    margin-bottom: 0;
   }
 
   .about-grid {
@@ -2024,7 +2047,49 @@ footer {
 
   .dev-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
+  }
+
+  #developer .dev-grid > div {
+    display: contents;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #developer .eyebrow {
+    order: 1;
+    margin-bottom: 12px;
+  }
+
+  .dev-name {
+    order: 2;
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+  }
+
+  .dev-role {
+    order: 3;
+    margin-bottom: 32px;
+  }
+
+  .dev-img-wrap {
+    order: 4;
+    margin-bottom: 32px;
+  }
+
+  .dev-bio {
+    order: 5;
+    margin-bottom: 16px;
+  }
+
+  .dev-chips {
+    order: 6;
+    margin-bottom: 24px;
+  }
+
+  .dev-links {
+    order: 7;
   }
 
   .dev-img-bg {
