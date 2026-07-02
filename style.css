@@ -281,9 +281,9 @@ svg {
 }
 
 #navbar.scrolled {
-  background: rgba(255, 255, 255, .92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, .72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--border), var(--shadow-s);
 }
 
@@ -1571,15 +1571,6 @@ svg {
   overflow: hidden;
 }
 
-.contact-form::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--purple), var(--neon));
-}
 
 .form-title {
   font-family: 'Poppins', sans-serif;
@@ -1665,6 +1656,18 @@ svg {
   fill: #fff;
 }
 
+.form-submit:disabled {
+  background: #94a3b8;
+  color: #f1f5f9;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.form-submit:disabled svg {
+  fill: #f1f5f9;
+}
+
 .form-success {
   display: none;
   text-align: center;
@@ -1701,6 +1704,25 @@ svg {
 .form-success p {
   color: var(--muted);
   font-size: .875rem;
+}
+
+/* Form validation errors */
+.form-error-msg {
+  display: none;
+  color: #ef4444;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.form-input.has-error,
+.form-textarea.has-error {
+  border-color: #ef4444 !important;
+}
+
+.form-input.has-error:focus,
+.form-textarea.has-error:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.09) !important;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1958,7 +1980,7 @@ footer {
   }
 
   .hero-float--1 {
-    display: none;
+    left: -10px;
   }
 
   .hero-float--2 {

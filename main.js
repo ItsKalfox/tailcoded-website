@@ -116,23 +116,150 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Contact form ──────────────────────────────────────
   const form = document.getElementById('contact-form');
-  const formBody = document.getElementById('form-body');
-  const formSuccess = document.getElementById('form-success');
+  const nameInput = document.getElementById('contact-name');
+  const nameError = document.getElementById('name-error-msg');
+  const emailInput = document.getElementById('contact-email-field');
+  const emailError = document.getElementById('email-error-msg');
+  const subjectInput = document.getElementById('contact-subject');
+  const subjectError = document.getElementById('subject-error-msg');
+  const messageInput = document.getElementById('contact-message');
+  const messageError = document.getElementById('message-error-msg');
+
+  function validateRequired(input, errorElement, fieldName) {
+    if (!input || !errorElement) return true;
+    const value = input.value.trim();
+    if (!value) {
+      errorElement.textContent = `${fieldName} is required`;
+      errorElement.style.display = 'block';
+      input.classList.add('has-error');
+      return false;
+    }
+    errorElement.style.display = 'none';
+    input.classList.remove('has-error');
+    return true;
+  }
+
+  function validateEmail() {
+    if (!emailInput || !emailError) return true;
+    const value = emailInput.value.trim();
+    if (!value) {
+      emailError.textContent = 'Email address is required';
+      emailError.style.display = 'block';
+      emailInput.classList.add('has-error');
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      emailError.textContent = 'Please enter a valid email address';
+      emailError.style.display = 'block';
+      emailInput.classList.add('has-error');
+      return false;
+    }
+    emailError.style.display = 'none';
+    emailInput.classList.remove('has-error');
+    return true;
+  }
+
+  function validateAll() {
+    const isNameValid = validateRequired(nameInput, nameError, 'Your Name');
+    const isEmailValid = validateEmail();
+    const isSubjectValid = validateRequired(subjectInput, subjectError, 'Subject');
+    const isMessageValid = validateRequired(messageInput, messageError, 'Your Message');
+    return isNameValid && isEmailValid && isSubjectValid && isMessageValid;
+  }
+
+  function setupValidation(input, errorElement, validationFn) {
+    if (!input) return;
+    input.addEventListener('blur', validationFn);
+    input.addEventListener('input', () => {
+      if (input.classList.contains('has-error')) {
+        validationFn();
+      }
+    });
+  }
+
+  setupValidation(nameInput, nameError, () => validateRequired(nameInput, nameError, 'Your Name'));
+  setupValidation(emailInput, emailError, validateEmail);
+  setupValidation(subjectInput, subjectError, () => validateRequired(subjectInput, subjectError, 'Subject'));
+  setupValidation(messageInput, messageError, () => validateRequired(messageInput, messageError, 'Your Message'));
 
   if (form) {
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const btn = form.querySelector('.form-submit');
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
 
-      setTimeout(() => {
-        formBody.style.display = 'none';
-        formSuccess.classList.add('show');
+      if (!validateAll()) {
+        return;
+      }
+
+      const btn = form.querySelector('.form-submit');
+      const originalHTML = btn.innerHTML;
+      
+      btn.disabled = true;
+      btn.innerHTML = 'Sending...';
+
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          btn.innerHTML = 'Message Sent';
+          btn.disabled = true;
+          form.reset();
+          [nameError, emailError, subjectError, messageError].forEach(err => {
+            if (err) err.style.display = 'none';
+          });
+          [nameInput, emailInput, subjectInput, messageInput].forEach(inp => {
+            if (inp) inp.classList.remove('has-error');
+          });
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              let handled = false;
+              data.errors.forEach(err => {
+                if (err.field === 'email' && emailInput && emailError) {
+                  emailError.textContent = err.message || 'Email is not valid';
+                  emailError.style.display = 'block';
+                  emailInput.classList.add('has-error');
+                  handled = true;
+                } else if (err.field === 'name' && nameInput && nameError) {
+                  nameError.textContent = err.message || 'Name is required';
+                  nameError.style.display = 'block';
+                  nameInput.classList.add('has-error');
+                  handled = true;
+                } else if (err.field === 'subject' && subjectInput && subjectError) {
+                  subjectError.textContent = err.message || 'Subject is required';
+                  subjectError.style.display = 'block';
+                  subjectInput.classList.add('has-error');
+                  handled = true;
+                } else if (err.field === 'message' && messageInput && messageError) {
+                  messageError.textContent = err.message || 'Message is required';
+                  messageError.style.display = 'block';
+                  messageInput.classList.add('has-error');
+                  handled = true;
+                }
+              });
+              
+              if (!handled) {
+                alert(data['errors'].map(error => error['message']).join(", "));
+              }
+            } else {
+              alert("Oops! There was a problem submitting your form");
+            }
+            btn.disabled = false;
+            btn.innerHTML = originalHTML;
+          });
+        }
+      })
+      .catch(error => {
+        alert("Oops! There was a problem submitting your form");
         btn.disabled = false;
-        btn.textContent = 'Send Message';
-        form.reset();
-      }, 1400);
+        btn.innerHTML = originalHTML;
+      });
     });
   }
 
