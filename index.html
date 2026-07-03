@@ -1,820 +1,976 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
   <title>Tailcoded Studio | Software Development &amp; Web Solutions</title>
-  <meta name="description" content="Solo software studio building web apps, mobile apps, and custom systems with a focus on clean design, performance, and reliability." />
-  <meta name="keywords"    content="software developer, full stack developer, React developer, .NET developer, Tailcoded Studio, Sri Lanka, web development, mobile app development" />
-  <meta name="author"      content="Tailcoded Studio" />
-  <meta name="robots"      content="index, follow" />
+  <meta name="description"
+    content="Solo software studio building web apps, mobile apps, and custom systems with a focus on clean design, performance, and reliability." />
+  <meta name="keywords"
+    content="software developer, full stack developer, React developer, .NET developer, Tailcoded Studio, Sri Lanka, web development, mobile app development" />
+  <meta name="author" content="Tailcoded Studio" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://tailcoded.studio/" />
-  <meta property="og:title"       content="Tailcoded Studio | Software Development &amp; Web Solutions" />
-  <meta property="og:description" content="Solo software studio building web apps, mobile apps, and custom systems with a focus on clean design, performance, and reliability." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tailcoded.studio/" />
+  <meta property="og:title" content="Tailcoded Studio | Software Development &amp; Web Solutions" />
+  <meta property="og:description"
+    content="Solo software studio building web apps, mobile apps, and custom systems with a focus on clean design, performance, and reliability." />
 
   <!-- Twitter -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Tailcoded Studio | Software Development &amp; Web Solutions" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tailcoded Studio | Software Development &amp; Web Solutions" />
   <meta name="twitter:description" content="Solo software studio building web apps, mobile apps, and custom systems." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <!-- Fonts -->
+  <!-- Fonts (Outfit for display headings, Plus Jakarta Sans for UI/body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="style/style.css" />
 </head>
+
 <body>
 
-<!-- ══════════════════════════════════════════════════════
+  <!-- Ambient visual layers -->
+  <div class="ambient-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow bg-glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow bg-glow-3" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  
+  <svg class="noise-overlay" aria-hidden="true" style="position: fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:9999; display:block;">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" />
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.02" />
+  </svg>
+
+  <!-- ══════════════════════════════════════════════════════
      NAVBAR
-══════════════════════════════════════════════════════ -->
-<nav id="navbar" role="navigation" aria-label="Main navigation">
-  <div class="wrap nav-inner">
+  ══════════════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="wrap nav-inner">
 
-    <a href="#hero" class="nav-logo" aria-label="Tailcoded Studio home">
-      <img src="images/tailcoded-logo.png" alt="Tailcoded Studio" class="nav-logo-img" />
-    </a>
+      <a href="#hero" class="nav-logo" aria-label="Tailcoded Studio home">
+        <img src="images/tailcoded-logo-2.png" alt="Tailcoded Studio" class="nav-logo-img" />
+      </a>
 
-    <ul class="nav-links" role="list">
-      <li><a href="#hero"      class="nav-link" data-section="hero">Home</a></li>
-      <li><a href="#about"     class="nav-link" data-section="about">Our Vision</a></li>
-      <li><a href="#services"  class="nav-link" data-section="services">Services</a></li>
-      <li><a href="#why"       class="nav-link" data-section="why">Why Me</a></li>
-      <li><a href="#developer" class="nav-link" data-section="developer">Developer</a></li>
-      <!-- <li><a href="#projects"  class="nav-link" data-section="projects">Projects</a></li> -->
-      <a href="#contact" class="nav-cta" id="nav-cta-btn">Contact</a>
-    </ul>
+      <ul class="nav-links" role="list">
+        <li><a href="#hero" class="nav-link" data-section="hero">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">Our Vision</a></li>
+        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+        <li><a href="#why" class="nav-link" data-section="why">Why Me</a></li>
+        <!-- <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li> -->
+        <li><a href="#developer" class="nav-link" data-section="developer">Developer</a></li>
+        <a href="#contact" class="nav-cta btn-magnetic" id="nav-cta-btn">Contact</a>
+      </ul>
 
-    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobile menu">
+    <a href="#hero" class="nav-link" data-section="hero">Home</a>
+    <a href="#about" class="nav-link" data-section="about">About</a>
+    <a href="#services" class="nav-link" data-section="services">Services</a>
+    <a href="#why" class="nav-link" data-section="why">Why Me</a>
+    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+    <a href="#developer" class="nav-link" data-section="developer">Developer</a>
+    <a href="#contact" class="nav-cta">Contact Me</a>
   </div>
-</nav>
-
-<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobile menu">
-  <a href="#hero"      class="nav-link" data-section="hero">Home</a>
-  <a href="#about"     class="nav-link" data-section="about">About</a>
-  <a href="#services"  class="nav-link" data-section="services">Services</a>
-  <a href="#why"       class="nav-link" data-section="why">Why Me</a>
-  <a href="#developer" class="nav-link" data-section="developer">Developer</a>
-  <a href="#projects"  class="nav-link" data-section="projects">Projects</a>
-  <a href="#contact"   class="nav-cta">Contact Me</a>
-</div>
 
 
-<!-- ══════════════════════════════════════════════════════
+  <!-- ══════════════════════════════════════════════════════
      HERO
-══════════════════════════════════════════════════════ -->
-<section id="hero" aria-labelledby="hero-h1">
-  <div class="hero-bg" aria-hidden="true"></div>
+  ══════════════════════════════════════════════════════ -->
+  <section id="hero" aria-labelledby="hero-h1">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-  <div class="wrap hero-inner">
+    <div class="wrap hero-inner">
 
-    <!-- ── Left: Copy ─────────────────────────── -->
-    <div class="hero-copy sr sr-l">
+      <!-- ── Left: Copy ─────────────────────────── -->
+      <div class="hero-copy sr sr-l">
+        <!-- <div class="hero-eyebrow-container">
+          <span class="hero-tag">Tailcoded Studio 2026</span>
+        </div> -->
 
-      <h1 id="hero-h1" class="hero-title">
-        Building modern<br/>
-        software solutions<br/>
-        <span class="line2">that matter.</span>
-      </h1>
+        <h1 id="hero-h1" class="hero-title">
+          Building modern<br />
+          software solutions<br />
+          <span class="grad-text">that matter.</span>
+        </h1>
 
-      <p class="hero-sub">
-        Solo software studio focused on web apps, mobile apps,
-        and custom systems delivering clean, performant, and
-        user-friendly digital products.
-      </p>
+        <p class="hero-sub">
+          Solo software studio focused on web apps, mobile apps,
+          and custom systems delivering clean, performant, and
+          user-friendly digital products.
+        </p>
 
-      <div class="hero-actions">
-        <a href="#services" class="btn btn-primary" id="hero-btn-services">
-          <img src="images/service-setting-solid-svgrepo-com.svg" alt="Services" height="25" />
-          View Services
-        </a>
-        <a href="#contact" class="btn btn-outline" id="hero-btn-contact">
-          Contact Me
-        </a>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary btn-magnetic" id="hero-btn-services">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+            View Services
+          </a>
+          <a href="#contact" class="btn btn-outline btn-magnetic" id="hero-btn-contact">
+            Contact Me
+          </a>
+        </div>
       </div>
 
-      <!-- <div class="hero-stats">
-        <div>
-          <div class="hero-stat-val" data-count="10" data-suffix="+">10+</div>
-          <div class="hero-stat-lbl">Projects Delivered</div>
-        </div>
-        <div>
-          <div class="hero-stat-val" data-count="3" data-suffix="+">3+</div>
-          <div class="hero-stat-lbl">Years of Experience</div>
-        </div>
-        <div>
-          <div class="hero-stat-val" data-count="100" data-suffix="%">100%</div>
-          <div class="hero-stat-lbl">Passion Driven</div>
-        </div>
-      </div> -->
-    </div>
-
-    <!-- ── Right: Visual ──────────────────────── -->
-    <div class="hero-visual sr sr-r" aria-hidden="true">
-      <div class="hero-card-wrap">
-
-        <!-- Floating badge top-left -->
-        <div class="hero-float hero-float--1">
-          <div class="hero-float-icon hero-float-icon--p">
-            <img src="images/stack2-svgrepo-com.svg" alt="Services" height="25" />
-          </div>
-          <div>
-            <span class="hero-float-label">Tech Stack</span>
-            <span class="hero-float-val">React · .NET · Java</span>
-          </div>
+      <!-- ── Right: Visual ──────────────────────── -->
+      <div class="hero-visual sr sr-r" aria-hidden="true">
+        <div class="canvas-container">
+          <canvas id="hero-canvas"></canvas>
         </div>
 
-        <!-- Code window -->
-        <div class="hero-window">
-          <div class="hero-window-bar">
-            <span class="hero-window-dot"></span>
-            <span class="hero-window-dot"></span>
-            <span class="hero-window-dot"></span>
-            <span class="hero-window-title">tailcoded-studio/api/services.cs</span>
+        <div class="hero-card-wrap tilt-card" data-tilt-speed="2.5">
+          <!-- Ambient card glow -->
+          <div class="hero-card-glow"></div>
+
+          <!-- Floating badge top-left -->
+          <div class="hero-float hero-float--1 tilt-card" data-tilt-speed="1.2">
+            <div class="hero-float-icon hero-float-icon--p">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+            <div>
+              <span class="hero-float-label">Tech Stack</span>
+              <span class="hero-float-val">React · .NET · Java</span>
+            </div>
           </div>
-          <div class="hero-window-body">
-            <div><span class="c-muted">// Tailcoded Studio - 2026</span></div>
-            <div>&nbsp;</div>
-            <div><span class="c-purple">namespace</span> <span class="c-blue">TailcodedStudio</span></div>
-            <div>{</div>
-            <div>&nbsp;&nbsp;<span class="c-purple">public class</span> <span class="c-yellow">StudioService</span></div>
-            <div>&nbsp;&nbsp;{</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">private readonly</span> <span class="c-blue">IRepository</span> <span class="c-orange">_repo</span>;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">public async</span> <span class="c-blue">Task</span>&lt;<span class="c-green">Project</span>&gt;</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">BuildSolution</span>(<span class="c-blue">string</span> <span class="c-orange">idea</span>)</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;{</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">var</span> <span class="c-orange">plan</span> = <span class="c-purple">await</span> <span class="c-orange">_repo</span></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="c-yellow">DesignAsync</span>(<span class="c-orange">idea</span>);</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">return await</span> <span class="c-yellow">DeployAsync</span>(<span class="c-orange">plan</span>);</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-            <div>&nbsp;&nbsp;}</div>
-            <div>}</div>
+
+          <!-- Code window -->
+          <div class="hero-window">
+            <div class="hero-window-bar">
+              <div class="window-dots">
+                <span class="hero-window-dot"></span>
+                <span class="hero-window-dot"></span>
+                <span class="hero-window-dot"></span>
+              </div>
+              <span class="hero-window-title">tailcoded-studio/api/services.cs</span>
+            </div>
+            <div class="hero-window-body">
+              <div><span class="c-muted">// Tailcoded Studio - 2026</span></div>
+              <div>&nbsp;</div>
+              <div><span class="c-purple">namespace</span> <span class="c-blue">TailcodedStudio</span></div>
+              <div>{</div>
+              <div>&nbsp;&nbsp;<span class="c-purple">public class</span> <span class="c-yellow">StudioService</span></div>
+              <div>&nbsp;&nbsp;{</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">private readonly</span> <span class="c-blue">IRepository</span> <span class="c-orange">_repo</span>;</div>
+              <div>&nbsp;</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">public async</span> <span class="c-blue">Task</span>&lt;<span class="c-green">Project</span>&gt;</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">BuildSolution</span>(<span class="c-blue">string</span> <span class="c-orange">idea</span>)</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;{</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">var</span> <span class="c-orange">plan</span> = <span class="c-purple">await</span> <span class="c-orange">_repo</span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="c-yellow">DesignAsync</span>(<span class="c-orange">idea</span>);</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-purple">return await</span> <span class="c-yellow">DeployAsync</span>(<span class="c-orange">plan</span>);</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+              <div>&nbsp;&nbsp;}</div>
+              <div>}</div>
+            </div>
+          </div>
+
+          <!-- Floating badge bottom-right -->
+          <div class="hero-float hero-float--2 tilt-card" data-tilt-speed="-1.2">
+            <div class="hero-float-icon hero-float-icon--n">
+              <img src="images/person-available-svgrepo-com.svg" width="20" alt="Available"/>
+            </div>
+            <div>
+              <span class="hero-float-label">Status</span>
+              <span class="hero-float-val">Available for Projects</span>
+            </div>
           </div>
         </div>
-
-        <!-- Floating badge bottom-right -->
-        <div class="hero-float hero-float--2">
-          <div class="hero-float-icon hero-float-icon--n">
-            <img src="images/person-available-svgrepo-com.svg" alt="Services" height="25" />
-          </div>
-          <div>
-            <span class="hero-float-label">Status</span>
-            <span class="hero-float-val">Available for Projects</span>
-          </div>
-        </div>
-
-        <!-- Dot grid decoration -->
-        <div class="hero-dots" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-        </div>
-
       </div>
+
     </div>
-
-  </div>
-</section>
+  </section>
 
 
-<!-- ══════════════════════════════════════════════════════
+  <!-- ══════════════════════════════════════════════════════
      ABOUT / VISION
-══════════════════════════════════════════════════════ -->
-<section id="about" class="section section--tinted" aria-labelledby="about-h2">
-  <div class="wrap">
-    <div class="about-grid">
+  ══════════════════════════════════════════════════════ -->
+  <section id="about" class="section section--tinted" aria-labelledby="about-h2">
+    <div class="wrap">
+      <div class="about-grid">
 
-      <!-- Story card -->
-      <div class="sr sr-l">
-        <div class="about-card">
-          <div aria-hidden="true" style="padding-bottom: 25px; display: flex; justify-content: center;">
-            <!-- Laptop illustration icon -->
-            <img src="images/about-clipart.png" alt="Services" height="150" />
+        <!-- Story card -->
+        <div class="sr sr-l">
+          <div class="about-card tilt-card" data-tilt-speed="2">
+            <div class="about-card-glow"></div>
+            <!-- Isometric abstract layout graphic -->
+            <div class="about-graphic" aria-hidden="true">
+              <div class="isometric-box">
+                <div class="iso-layer layer-1">
+                  <div class="iso-node"></div>
+                  <div class="iso-node"></div>
+                </div>
+                <div class="iso-layer layer-2">
+                  <div class="iso-line"></div>
+                </div>
+                <div class="iso-layer layer-3">
+                  <div class="iso-mesh"></div>
+                </div>
+              </div>
+            </div>
+            <h3>What We're About</h3>
+            <p>
+              Tailcoded Studio was launched in 2026 in Sri Lanka, founded with a simple goal:
+              to build clean, reliable, and modern software solutions that actually
+              solve real problems. What started as a solo developer's passion grew into a focused
+              studio identity for designing and developing websites, web applications, and technical
+              systems for both academic and real-world use cases.
+            </p>
           </div>
-          <h3>What We're About</h3>
+        </div>
+
+        <!-- Vision list -->
+        <div class="sr sr-r">
+          <p class="eyebrow">Our Vision</p>
+          <h2 id="about-h2" class="h2">
+            Turning ideas into<br />
+            <span class="grad-text">real digital products</span>
+          </h2>
+          <p class="lead" style="margin-bottom:32px;">
+            A personal development space where ideas become functional,
+            user-friendly products with a strong focus on simplicity,
+            performance, and modern design.
+          </p>
+
+          <div class="vision-list">
+            <div class="vision-item">
+              <div class="vision-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                  <polyline points="2 17 12 22 22 17" />
+                  <polyline points="2 12 12 17 22 12" />
+                </svg>
+              </div>
+              <div class="vision-text">
+                <strong>Modern &amp; Scalable Architecture</strong>
+                <p>Software that grows with you—clean, maintainable, and production-ready from day one.</p>
+              </div>
+            </div>
+
+            <div class="vision-item">
+              <div class="vision-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+              </div>
+              <div class="vision-text">
+                <strong>Usability &amp; Performance First</strong>
+                <p>Every product is designed to be fast, intuitive, and a pleasure to use.</p>
+              </div>
+            </div>
+
+            <div class="vision-item">
+              <div class="vision-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </div>
+              <div class="vision-text">
+                <strong>Passion-Driven Development</strong>
+                <p>Every line of code is written with genuine care and enthusiasm for the craft.</p>
+              </div>
+            </div>
+
+            <div class="vision-item">
+              <div class="vision-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 6l-9.5 9.5-5-5L1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </div>
+              <div class="vision-text">
+                <strong>Continuous Learning &amp; Growth</strong>
+                <p>Always improving, always exploring new technologies to deliver cutting-edge solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+     SERVICES
+  ══════════════════════════════════════════════════════ -->
+  <section id="services" class="section" aria-labelledby="services-h2">
+    <div class="wrap">
+
+      <div class="sr" style="margin-bottom:48px;">
+        <p class="eyebrow">What We Do</p>
+        <h2 id="services-h2" class="h2">Our <span class="grad-text">Services</span></h2>
+        <p class="lead">Practical, modern digital solutions—functional, clean, responsive, and easy to use.</p>
+      </div>
+
+      <!-- Intro banner -->
+      <div class="services-intro sr d1">
+        <div class="services-intro-inner">
           <p>
-            Tailcoded Studio was launched in 2026 in Sri Lanka, founded with a simple goal 
-            to build <strong>clean, reliable, and modern software solutions</strong> that actually
-            solve real problems. What started as a solo developer's passion grew into a focused
-            studio identity for designing and developing websites, web applications, and technical
-            systems for both academic and real-world use cases.
+            Tailcoded Studio specializes in building practical and modern digital solutions tailored
+            to different needs. We develop web applications, mobile applications, and custom software
+            systems including dashboards, management systems, and university-level projects. Each
+            solution is built with attention to performance, usability, and scalable structure.
+            Whether it's a personal project, academic system, or business idea the goal is always
+            the same: turn ideas into working digital products.
           </p>
         </div>
       </div>
 
-      <!-- Vision list -->
-      <div class="sr sr-r">
-        <p class="eyebrow">Our Vision</p>
-        <h2 id="about-h2" class="h2">
-          Turning ideas into<br/>
-          <em>real digital products</em>
-        </h2>
-        <p class="lead" style="margin-bottom:32px;">
-          A personal development space where ideas become functional,
-          user-friendly products with a strong focus on simplicity,
-          performance, and modern design.
-        </p>
+      <!-- Service cards with mouse hover glow -->
+      <div class="services-grid hover-glow-container">
 
-        <div class="vision-list">
-          <div class="vision-item">
-            <div class="vision-text">
-              <strong>Modern &amp; Scalable Architecture</strong>
-              <p>Software that grows with you clean, maintainable, and production-ready from day one.</p>
+        <div class="svc-card sr d1 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="svc-card-bg"></div>
+          <div class="svc-icon-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h3>Web Development</h3>
+          <p>Responsive websites and web applications built with React, Vite, and modern frameworks—fast, accessible, and beautifully designed.</p>
+        </div>
+
+        <div class="svc-card sr d2 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="svc-card-bg"></div>
+          <div class="svc-icon-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+          </div>
+          <h3>Mobile App Development</h3>
+          <p>Clean, performant mobile applications designed for real-world usage with a focus on intuitive UX and cross-platform compatibility.</p>
+        </div>
+
+        <div class="svc-card sr d3 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="svc-card-bg"></div>
+          <div class="svc-icon-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3>System Development</h3>
+          <p>CRUD systems, admin panels, university-level projects, and management dashboards—robust, maintainable, and structured for scale.</p>
+        </div>
+
+        <div class="svc-card sr d1 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="svc-card-bg"></div>
+          <div class="svc-icon-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
+          </div>
+          <h3>Custom Software Solutions</h3>
+          <p>Tailored software built around your specific requirements from concept to deployment, designed to solve real problems efficiently.</p>
+        </div>
+
+        <div class="svc-card sr d2 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="svc-card-bg"></div>
+          <div class="svc-icon-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+              <line x1="6" y1="6" x2="6.01" y2="6" />
+              <line x1="6" y1="18" x2="6.01" y2="18" />
+            </svg>
+          </div>
+          <h3>Backend &amp; API Development</h3>
+          <p>Scalable REST APIs, JWT-secured services, and clean backend architecture using .NET Core built for performance and reliability.</p>
+        </div>
+
+        <div class="svc-card sr d3 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="svc-card-bg"></div>
+          <div class="svc-icon-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+              <line x1="14" y1="4" x2="10" y2="20" />
+            </svg>
+          </div>
+          <h3>Full-Stack Solutions</h3>
+          <p>End-to-end development from database design to pixel-perfect UI—complete full-stack systems delivered as a cohesive, polished product.</p>
+        </div>
+
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="tech-wrap sr">
+        <div class="tech-header">
+          <div class="tech-header-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
+          </div>
+          <h3>Tech Stack I Use</h3>
+        </div>
+
+        <div class="tech-grid">
+          <div>
+            <div class="tech-group-label">Frontend</div>
+            <div class="tech-chips">
+              <span class="tech-chip-item" data-tooltip="React"><img src="images/react-svgrepo-com.svg" alt="react" /></span>
+              <span class="tech-chip-item" data-tooltip="Vite"><img src="images/vite-svgrepo-com.svg" alt="vite" /></span>
+              <span class="tech-chip-item" data-tooltip="HTML 5"><img src="images/html-5-svgrepo-com.svg" alt="html5" /></span>
+              <span class="tech-chip-item" data-tooltip="CSS 3"><img src="images/css-svgrepo-com.svg" alt="css3" /></span>
+              <span class="tech-chip-item" data-tooltip="TailwindCSS"><img src="images/tailwind-svgrepo-com.svg" alt="tailwindcss" /></span>
             </div>
           </div>
-          <div class="vision-item">
-            <div class="vision-text">
-              <strong>Usability &amp; Performance First</strong>
-              <p>Every product is designed to be fast, intuitive, and a pleasure to use.</p>
+          <div>
+            <div class="tech-group-label">Backend</div>
+            <div class="tech-chips">
+              <span class="tech-chip-item" data-tooltip=".NET Core"><img src="images/NET.svg" alt=".NET" /></span>
+              <span class="tech-chip-item" data-tooltip="REST API"><img src="images/rest-api-blue-logo-22099.svg" alt="rest-api" /></span>
+              <span class="tech-chip-item" data-tooltip="JWT Security"><img src="images/Jwt-Icon--Streamline-Svg-Logos.svg" alt="jwt" /></span>
+              <span class="tech-chip-item" data-tooltip="Node.js"><img src="images/nodejs.png" alt="node.js" /></span>
+              <span class="tech-chip-item" data-tooltip="Spring Boot"><img src="images/Spring-Icon--Streamline-Svg-Logos.svg" alt="spring" /></span>
             </div>
           </div>
-          <div class="vision-item">
-            <div class="vision-text">
-              <strong>Passion-Driven Development</strong>
-              <p>Every line of code is written with genuine care and enthusiasm for the craft.</p>
+          <div>
+            <div class="tech-group-label">Database</div>
+            <div class="tech-chips">
+              <span class="tech-chip-item" data-tooltip="SQL Databases"><img src="images/sql-database-generic-svgrepo-com.svg" alt="sql database" /></span>
+              <span class="tech-chip-item" data-tooltip="Microsoft SQL Server"><img src="images/Microsoft_SQL_Server_2025_icon.svg" alt="sql server" /></span>
+              <span class="tech-chip-item" data-tooltip="PostgreSQL"><img src="images/postgresql-svgrepo-com.svg" alt="postgresql" /></span>
+              <span class="tech-chip-item" data-tooltip="MongoDB"><img src="images/mongo-svgrepo-com.svg" alt="mongodb" /></span>
+              <span class="tech-chip-item" data-tooltip="Firebase"><img src="images/firebase-svgrepo-com.svg" alt="firebase" /></span>
             </div>
           </div>
-          <div class="vision-item">
-            <div class="vision-text">
-              <strong>Continuous Learning &amp; Growth</strong>
-              <p>Always improving, always exploring new technologies to deliver cutting-edge solutions.</p>
+          <div>
+            <div class="tech-group-label">Tools &amp; DevOps</div>
+            <div class="tech-chips">
+              <span class="tech-chip-item" data-tooltip="Docker"><img src="images/Docker-Icon--Streamline-Svg-Logos.svg" alt="docker" /></span>
+              <span class="tech-chip-item" data-tooltip="Git Version Control"><img src="images/Git-Icon--Streamline-Svg-Logos.svg" alt="git" /></span>
+              <span class="tech-chip-item" data-tooltip="Microsoft Azure"><img src="images/Microsoft-Azure--Streamline-Svg-Logos.svg" alt="azure" /></span>
+              <span class="tech-chip-item" data-tooltip="Flutter Mobile"><img src="images/Flutter--Streamline-Svg-Logos.svg" alt="flutter" /></span>
+              <span class="tech-chip-item" data-tooltip="IntelliJ IDEA"><img src="images/Intellij-Idea--Streamline-Svg-Logos.svg" alt="intellij-ide" /></span>
             </div>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SERVICES
-══════════════════════════════════════════════════════ -->
-<section id="services" class="section" aria-labelledby="services-h2">
-  <div class="wrap">
+  <!-- ══════════════════════════════════════════════════════
+     WHY ME (Bento Grid)
+  ══════════════════════════════════════════════════════ -->
+  <section id="why" class="section section--tinted" aria-labelledby="why-h2">
+    <div class="wrap">
 
-    <div class="sr" style="margin-bottom:48px;">
-      <p class="eyebrow">What We Do</p>
-      <h2 id="services-h2" class="h2">Our <em>Services</em></h2>
-      <p class="lead">Practical, modern digital solutions functional, clean, responsive, and easy to use.</p>
-    </div>
-
-    <!-- Intro banner -->
-    <div class="services-intro sr d1">
-      <div class="services-intro-inner">
-        <p>
-          Tailcoded Studio specializes in building practical and modern digital solutions tailored
-          to different needs. We develop web applications, mobile applications, and custom software
-          systems including dashboards, management systems, and university-level projects. Each
-          solution is built with attention to performance, usability, and scalable structure.
-          Whether it's a personal project, academic system, or business idea the goal is always
-          the same: <strong>turn ideas into working digital products.</strong>
-        </p>
-      </div>
-    </div>
-
-    <!-- Service cards -->
-    <div class="services-grid">
-
-      <div class="svc-card sr d1">
-        <div class="svc-icon svc-icon-m" aria-hidden="true">
-          <!-- Globe/Web icon -->
-          <img src="images/web-svgrepo-com.svg" alt="Web Development" width="30"/>
-        </div>
-        <h3>Web Development</h3>
-        <p>Responsive websites and web applications built with React, Vite, and modern frameworks fast, accessible, and beautifully designed.</p>
+      <div class="sr" style="margin-bottom:48px;">
+        <p class="eyebrow">The Difference</p>
+        <h2 id="why-h2" class="h2">Why <span class="grad-text">Choose Me?</span></h2>
+        <p class="lead">Working with a solo developer means direct communication, fast iteration, and absolute ownership of your product.</p>
       </div>
 
-      <div class="svc-card sr d2">
-        <div class="svc-icon svc-icon-n" aria-hidden="true">
-          <!-- Phone icon -->
-          <img src="images/mobile-alt-2-svgrepo-com.svg" alt="Mobile App   Development" width="30"/>
-        </div>
-        <h3>Mobile App Development</h3>
-        <p>Clean, performant mobile applications designed for real-world usage with a focus on intuitive UX and cross-platform compatibility.</p>
-      </div>
-
-      <div class="svc-card sr d3">
-        <div class="svc-icon svc-icon-m" aria-hidden="true">
-          <!-- Database icon -->
-          <img src="images/computer-svgrepo-com.svg" alt="System Development" width="30"/>
-        </div>
-        <h3>System Development</h3>
-        <p>CRUD systems, admin panels, university-level projects, and management dashboards robust, maintainable, and structured for scale.</p>
-      </div>
-
-      <div class="svc-card sr d1">
-        <div class="svc-icon svc-icon-m" aria-hidden="true">
-          <!-- Settings/Custom icon -->
-          <img src="images/diagram-project-svgrepo-com.svg" alt="Custom Software Solutions" width="30"/>
-        </div>
-        <h3>Custom Software Solutions</h3>
-        <p>Tailored software built around your specific requirements from concept to deployment, designed to solve real problems efficiently.</p>
-      </div>
-
-      <div class="svc-card sr d2">
-        <div class="svc-icon svc-icon-n" aria-hidden="true">
-          <!-- API/Server icon -->
-          <img src="images/api-settings-svgrepo-com.svg" alt="Backend & API Development" width="30"/>
-        </div>
-        <h3>Backend &amp; API Development</h3>
-        <p>Scalable REST APIs, JWT-secured services, and clean backend architecture using .NET Core built for performance and reliability.</p>
-      </div>
-
-      <div class="svc-card sr d3">
-        <div class="svc-icon svc-icon-m" aria-hidden="true">
-          <!-- Code icon -->
-          <img src="images/rectangle-code-svgrepo-com.svg" alt="Full-Stack Solutions" width="30"/>
-        </div>
-        <h3>Full-Stack Solutions</h3>
-        <p>End-to-end development from database design to pixel-perfect UI complete full-stack systems delivered as a cohesive, polished product.</p>
-      </div>
-
-    </div>
-
-    <!-- Tech Stack -->
-    <div class="tech-wrap sr">
-      <div class="tech-header">
-        <div class="tech-header-icon" aria-hidden="true">
-          <img src="images/stack2-svgrepo-com.svg" alt="Custom Software Solutions" width="30"/>
-        </div>
-        <h3>Tech Stack I Use</h3>
-      </div>
-
-      <div class="tech-grid">
-        <div>
-          <div class="tech-group-label">Frontend</div>
-          <div class="tech-chips">
-            <span><img src="images/react-svgrepo-com.svg" alt="react" width="50"/></span>
-            <span><img src="images/vite-svgrepo-com.svg" alt="vite" width="50"/></span>
-            <span><img src="images/html-5-svgrepo-com.svg" alt="html5" width="50"/></span>
-            <span><img src="images/css-svgrepo-com.svg" alt="css3" width="50"/></span>
-            <span><img src="images/tailwind-svgrepo-com.svg" alt="tailwindcss" width="50"/></span>
+      <div class="bento-grid hover-glow-container">
+        
+        <!-- Bento 1: Direct Communication (col-span-2) -->
+        <div class="bento-card col-span-2 sr d1 tilt-card hover-glow" data-tilt-speed="2">
+          <div class="bento-card-bg"></div>
+          <div class="bento-glow-spot"></div>
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-messages-square-icon lucide-messages-square"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"/></svg>
+          </div>
+          <div class="bento-content">
+            <h3>Direct Communication</h3>
+            <p>Talk directly to the developer building your project. No middlemen, no translation delays—just clear, honest discussion and updates.</p>
           </div>
         </div>
-        <div>
-          <div class="tech-group-label">Backend</div>
-          <div class="tech-chips">
-            <span><img src="images/NET.svg" alt=".NET" width="50"/></span>
-            <span><img src="images/rest-api-icon.svg" alt="rest-api" width="50"/></span>
-            <span><img src="images/Jwt-Icon--Streamline-Svg-Logos.svg" alt="jwt" width="50"/></span>
-            <span><img src="images/node-js-svgrepo-com.svg" alt="node.js" width="50"/></span>
-            <span><img src="images/Spring-Icon--Streamline-Svg-Logos.svg" alt="spring" width="50"/></span>
+
+        <!-- Bento 2: Fast Iteration -->
+        <div class="bento-card sr d2 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="bento-card-bg"></div>
+          <div class="bento-glow-spot"></div>
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge-icon lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+          </div>
+          <div class="bento-content">
+            <h3>Fast Iteration</h3>
+            <p>Quick turnaround on feedback. Solo development removes structural friction and bottlenecks for swift, responsive product iterations.</p>
           </div>
         </div>
-        <div>
-          <div class="tech-group-label">Database</div>
-          <div class="tech-chips">
-            <span><img src="images/sql-database-generic-svgrepo-com.svg" alt="sql database" width="50"/></span>
-            <span><img src="images/microsoft-sql-server-logo-svgrepo-com.svg" alt="sql server" width="50"/></span>
-            <span><img src="images/postgresql-svgrepo-com.svg" alt="postgresql" width="50"/></span>
-            <span><img src="images/mongo-svgrepo-com.svg" alt="mongodb" width="50"/></span>
-            <span><img src="images/firebase-svgrepo-com.svg" alt="firebase" width="50"/></span>
+
+        <!-- Bento 3: AI-Accelerated Development -->
+        <div class="bento-card sr d3 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="bento-card-bg"></div>
+          <div class="bento-glow-spot"></div>
+          <div class="bento-icon icon-sparkle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-icon lucide-brain"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>
+          </div>
+          <div class="bento-content">
+            <h3>AI-Accelerated</h3>
+            <p>Leveraging state-of-the-art AI development tools to accelerate coding, automate testing, and deliver production-ready software efficiently.</p>
           </div>
         </div>
-        <div>
-          <div class="tech-group-label">Tools &amp; DevOps</div>
-          <div class="tech-chips">
-            <span><img src="images/Docker-Icon--Streamline-Svg-Logos.svg" alt="docker" width="50"/></span>
-            <span><img src="images/Git-Icon--Streamline-Svg-Logos.svg" alt="git" width="50"/></span>
-            <span><img src="images/Microsoft-Azure--Streamline-Svg-Logos.svg" alt="azure" width="50"/></span>
-            <span><img src="images/Flutter--Streamline-Svg-Logos.svg" alt="flutter" width="50"/></span>
-            <span><img src="images/Intellij-Idea--Streamline-Svg-Logos.svg" alt="intellij-ide" width="50"/></span>
+
+        <!-- Bento 4: UI/UX Focus (col-span-2) -->
+        <div class="bento-card col-span-2 sr d1 tilt-card hover-glow" data-tilt-speed="2">
+          <div class="bento-card-bg"></div>
+          <div class="bento-glow-spot"></div>
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-template-icon lucide-layout-template"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>
+          </div>
+          <div class="bento-content">
+            <h3>UI/UX Focus</h3>
+            <p>Every interface is engineered to be beautiful, modern, and highly intuitive. Page performance and visual excellence are prioritized.</p>
           </div>
         </div>
+
+        <!-- Bento 5: Full-Stack Experience (col-span-2) -->
+        <div class="bento-card col-span-2 sr d2 tilt-card hover-glow" data-tilt-speed="2">
+          <div class="bento-card-bg"></div>
+          <div class="bento-glow-spot"></div>
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml-icon lucide-code-xml"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>          </div>
+          <div class="bento-content">
+            <h3>Full-Stack Capability</h3>
+            <p>End-to-end expertise spanning database modeling, API architecture, frontend frameworks, and cloud deployments. One developer owns the entire picture.</p>
+          </div>
+        </div>
+
+        <!-- Bento 6: Passion-Driven -->
+        <div class="bento-card sr d3 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="bento-card-bg"></div>
+          <div class="bento-glow-spot"></div>
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+          </div>
+          <div class="bento-content">
+            <h3>Passion-Driven</h3>
+            <p>This isn't just a daily job—every single application is engineered with structural care, code hygiene, and pride in clean engineering.</p>
+          </div>
+        </div>
+
       </div>
     </div>
-
-  </div>
-</section>
+  </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     WHY ME
-══════════════════════════════════════════════════════ -->
-<section id="why" class="section section--tinted" aria-labelledby="why-h2">
-  <div class="wrap">
+  <!-- ══════════════════════════════════════════════════════
+     PROJECTS (Portfolio)
+  ══════════════════════════════════════════════════════ -->
+  <!-- <section id="projects" class="section section--tinted" aria-labelledby="projects-h2">
+    <div class="wrap">
 
-    <div class="sr" style="margin-bottom:48px;">
-      <p class="eyebrow">The Difference</p>
-      <h2 id="why-h2" class="h2">Why <em>Choose Me?</em></h2>
-      <p class="lead">Working with a solo developer means better communication, faster iteration, and real ownership of your project.</p>
+      <div class="sr" style="margin-bottom:48px;">
+        <p class="eyebrow">Portfolio</p>
+        <h2 id="projects-h2" class="h2">Featured <span class="grad-text">Projects</span></h2>
+        <p class="lead">A selection of real-world and academic projects built with modern, scalable tech stacks.</p>
+      </div>
+
+      <div class="proj-grid hover-glow-container">
+
+        <article class="proj-card sr d1 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="proj-card-bg"></div>
+          <div class="proj-top">
+            <span class="proj-type">Full-Stack</span>
+            <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+          </div>
+          <div class="proj-content">
+            <h3>University Management System</h3>
+            <p>Complete academic management with student registration, course management, grade tracking, and admin dashboard.</p>
+          </div>
+          <div class="proj-techs">
+            <span class="chip-tech">React</span>
+            <span class="chip-tech">.NET Core</span>
+            <span class="chip-tech">SQL Server</span>
+            <span class="chip-tech">JWT</span>
+          </div>
+        </article>
+
+        <article class="proj-card sr d2 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="proj-card-bg"></div>
+          <div class="proj-top">
+            <span class="proj-type">Web App</span>
+            <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+          </div>
+          <div class="proj-content">
+            <h3>Inventory &amp; Admin Dashboard</h3>
+            <p>Real-time inventory tracking with role-based access, analytics charts, and CRUD operations for business management.</p>
+          </div>
+          <div class="proj-techs">
+            <span class="chip-tech">Vite</span>
+            <span class="chip-tech">ASP.NET</span>
+            <span class="chip-tech">PostgreSQL</span>
+            <span class="chip-tech">Docker</span>
+          </div>
+        </article>
+
+        <article class="proj-card sr d3 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="proj-card-bg"></div>
+          <div class="proj-top">
+            <span class="proj-type">API System</span>
+            <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+          </div>
+          <div class="proj-content">
+            <h3>Secure REST API Platform</h3>
+            <p>Scalable REST API with JWT authentication, Entity Framework Core data access, Swagger docs, and clean layered architecture.</p>
+          </div>
+          <div class="proj-techs">
+            <span class="chip-tech">.NET 8</span>
+            <span class="chip-tech">EF Core</span>
+            <span class="chip-tech">SQL Server</span>
+            <span class="chip-tech">Swagger</span>
+          </div>
+        </article>
+
+        <article class="proj-card sr d1 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="proj-card-bg"></div>
+          <div class="proj-top">
+            <span class="proj-type">Frontend</span>
+            <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+          </div>
+          <div class="proj-content">
+            <h3>E-Commerce Web Interface</h3>
+            <p>Modern storefront with product filtering, cart management, responsive design, and smooth user experience.</p>
+          </div>
+          <div class="proj-techs">
+            <span class="chip-tech">React</span>
+            <span class="chip-tech">Tailwind CSS</span>
+            <span class="chip-tech">Vite</span>
+            <span class="chip-tech">REST API</span>
+          </div>
+        </article>
+
+        <article class="proj-card sr d2 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="proj-card-bg"></div>
+          <div class="proj-top">
+            <span class="proj-type">Academic</span>
+            <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+          </div>
+          <div class="proj-content">
+            <h3>Library Management System</h3>
+            <p>Full-featured library CRUD with book borrowing workflows, member management, fine calculations, and reporting.</p>
+          </div>
+          <div class="proj-techs">
+            <span class="chip-tech">.NET MVC</span>
+            <span class="chip-tech">SQL Server</span>
+            <span class="chip-tech">Bootstrap</span>
+            <span class="chip-tech">EF Core</span>
+          </div>
+        </article>
+
+        <article class="proj-card sr d3 tilt-card hover-glow" data-tilt-speed="3">
+          <div class="proj-card-bg"></div>
+          <div class="proj-top">
+            <span class="proj-type">Cloud / DevOps</span>
+            <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+          </div>
+          <div class="proj-content">
+            <h3>Dockerized Deployment Pipeline</h3>
+            <p>Containerized full-stack application on Azure with Docker Compose, automated GitHub CI/CD, and environment-based config.</p>
+          </div>
+          <div class="proj-techs">
+            <span class="chip-tech">Docker</span>
+            <span class="chip-tech">Azure</span>
+            <span class="chip-tech">GitHub Actions</span>
+            <span class="chip-tech">.NET</span>
+          </div>
+        </article>
+
+      </div>
     </div>
-
-    <div class="why-grid">
-
-      <div class="why-card sr d1">
-        <div class="why-card-icon" aria-hidden="true">
-          <img src="images/communication-bubble-chat-comments-conversation-message-icon-svgrepo-com.svg" alt="Communication" width="25"/>
-        </div>
-        <h3>Direct Communication</h3>
-        <p>Talk directly to the developer building your project. No middlemen, no delays just clear, honest communication.</p>
-      </div>
-
-      <div class="why-card sr d2">
-        <div class="why-card-icon" aria-hidden="true">
-          <img src="images/iteration-svgrepo-com.svg" alt="Iteration" width="25"/>
-        </div>
-        <h3>Fast Iteration</h3>
-        <p>Quick turnaround on feedback and changes. Solo development means fewer bottlenecks and faster delivery of working features.</p>
-      </div>
-
-      <div class="why-card sr d3">
-        <div class="why-card-icon" aria-hidden="true">
-          <img src="images/ai-svgrepo-com.svg" width="30"/>
-        </div>
-        <h3>AI-Accelerated Development</h3>
-        <p>Leveraging modern AI tools to accelerate development, streamline research, automate repetitive tasks, and deliver high-quality software faster without compromising reliability.</p>
-      </div>
-
-      <div class="why-card sr d1">
-        <div class="why-card-icon" aria-hidden="true">
-          <img src="images/ui-checks-grid-svgrepo-com.svg" alt="UI/UX" width="25"/>
-        </div>
-        <h3>UI/UX Focus</h3>
-        <p>Every interface is designed to be beautiful and intuitive. Performance and visual quality are never compromised.</p>
-      </div>
-
-      <div class="why-card sr d2">
-        <div class="why-card-icon" aria-hidden="true">
-          <img src="images/loading-process-svgrepo-com.svg" alt="Full-Stack Experience" width="25"/>
-        </div>
-        <h3>Full-Stack Experience</h3>
-        <p>End-to-end capability across frontend, backend, databases, and deployment. One developer who owns the full picture.</p>
-      </div>
-
-      <div class="why-card sr d3">
-        <div class="why-card-icon" aria-hidden="true">
-          <img src="images/heart-angle-svgrepo-com.svg" alt="Passion-Driven" width="25"/>
-        </div>
-        <h3>Passion-Driven</h3>
-        <p>This isn't just a job every project is approached with genuine enthusiasm and a commitment to building something excellent.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section> -->
 
 
-<!-- ══════════════════════════════════════════════════════
+  <!-- ══════════════════════════════════════════════════════
      ABOUT DEVELOPER
-══════════════════════════════════════════════════════ -->
-<section id="developer" class="section" aria-labelledby="developer-h2">
-  <div class="wrap">
-    <div class="dev-grid">
+  ══════════════════════════════════════════════════════ -->
+  <section id="developer" class="section" aria-labelledby="developer-h2">
+    <div class="wrap">
+      <div class="dev-grid">
 
-      <!-- Image -->
-      <div class="sr sr-l">
-        <div class="dev-img-wrap">
-          <div class="dev-img-bg" aria-hidden="true"></div>
-          <div class="dev-img">
-            <img src="images/pfp-01.jpeg" alt="Solo developer behind Tailcoded Studio — a full-stack software engineer based in Sri Lanka" loading="lazy" />
-          </div>
-          <div class="dev-floating-badge" aria-label="Full-Stack Developer — Available for projects">
-            <div class="dev-fb-icon" aria-hidden="true">
-              <img src="images/person-available-svgrepo-com.svg" alt="Services" height="20" />
+        <!-- Image with glowing tilt container -->
+        <div class="sr sr-l">
+          <div class="dev-img-wrap tilt-card" data-tilt-speed="2.5">
+            <div class="dev-img-glow"></div>
+            <div class="dev-img-frame">
+              <div class="dev-img">
+                <img src="images/pfp-01.jpeg"
+                  alt="Solo developer behind Tailcoded Studio — a full-stack software engineer based in Sri Lanka"
+                  loading="lazy" />
+              </div>
             </div>
-            <div>
-              <span class="dev-fb-label">Nipun Wijethunga</span>
-              <span class="dev-fb-val">Available for Projects ✓</span>
+            <div class="dev-floating-badge" aria-label="Full-Stack Developer — Available for projects">
+              <div class="dev-fb-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <div>
+                <span class="dev-fb-label">Nipun Wijethunga</span>
+                <span class="dev-fb-val">Available for Projects ✓</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Biography text styled premium -->
+        <div class="sr sr-r">
+          <p class="eyebrow">About The Developer</p>
+          <h2 id="developer-h2" class="dev-name">
+            The Solo Dev Behind<br />
+            <span class="grad-text">Tailcoded Studio</span>
+          </h2>
+          <div class="dev-role">Software Engineer &amp; Full-Stack Developer</div>
+
+          <div class="dev-bio-window">
+            <div class="bio-window-bar">
+              <span class="bio-window-dot"></span>
+              <span class="bio-window-dot"></span>
+              <span class="bio-window-dot"></span>
+            </div>
+            <div class="bio-window-body">
+              <p class="dev-bio">
+                I’m <strong>Nipun Wijethunga</strong>, the solo developer behind Tailcoded Studio—a Software Engineer &amp; Full-Stack Developer based in Sri Lanka.
+              </p>
+              <p class="dev-bio">
+                I focus on building real-world software systems that are clean, scalable, and user-friendly. My work spans
+                web applications, mobile apps, and custom digital solutions designed with both engineering structure and
+                modern UI design in mind.
+              </p>
+              <p class="dev-bio">
+                I enjoy working across the full stack—from backend architecture and database design to frontend interfaces
+                and deployment. I believe good software comes from balancing technical discipline with thoughtful design and
+                attention to user experience.
+              </p>
+              <p class="dev-bio">
+                I’m continuously improving my skills, exploring modern technologies, and turning ideas into practical,
+                production-ready products.
+              </p>
+            </div>
+          </div>
+
+          <div class="dev-links">
+            <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-magnetic"
+              id="dev-github-btn" aria-label="GitHub profile">
+              <svg viewBox="0 0 24 24" width="20" height="20" style="fill:currentColor" aria-hidden="true">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+            <a href="#contact" class="btn btn-primary btn-magnetic" id="dev-contact-btn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              Get In Touch
+            </a>
+          </div>
+        </div>
+
       </div>
-
-      <!-- Info -->
-      <div class="sr sr-r">
-        <p class="eyebrow">About The Developer</p>
-        <h2 id="developer-h2" class="dev-name">
-          The Solo Dev Behind<br/>
-          <span class="grad-text">Tailcoded Studio</span>
-        </h2>
-        <div class="dev-role">Software Engineer &amp; Full-Stack Developer</div>
-
-        <p class="dev-bio">
-          I’m Nipun Wijethunga, the solo developer behind Tailcoded Studio. A Software Engineer & Full-Stack Developer based in Sri Lanka.
-        </p>
-        <p class="dev-bio">
-          I focus on building real-world software systems that are clean, scalable, and user-friendly. My work spans web applications, mobile apps, and custom digital solutions designed with both engineering structure and modern UI design in mind.
-        </p>
-        <p class="dev-bio">
-          I enjoy working across the full stack—from backend architecture and database design to frontend interfaces and deployment. I believe good software comes from balancing technical discipline with thoughtful design and attention to user experience.
-        </p>
-        <p class="dev-bio">
-          I’m continuously improving my skills, exploring modern technologies, and turning ideas into practical, production-ready products.
-        </p>
-        <!-- <div class="dev-chips">
-          <span class="chip chip-p">React</span>
-          <span class="chip chip-p">.NET Core</span>
-          <span class="chip chip-n">SQL Server</span>
-          <span class="chip chip-n">PostgreSQL</span>
-          <span class="chip chip-g">Docker</span>
-          <span class="chip chip-g">Azure</span>
-          <span class="chip chip-p">REST APIs</span>
-          <span class="chip chip-g">Git</span>
-          <span class="chip chip-n">Entity Framework</span>
-        </div> -->
-
-        <div class="dev-links">
-          <a href="https://github.com/ItsKalfox" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" id="dev-github-btn" aria-label="GitHub profile">
-            <svg viewBox="0 0 24 24" style="fill:currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
-          <a href="#contact" class="btn btn-primary" id="dev-contact-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Get In Touch
-          </a>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     PROJECTS
-══════════════════════════════════════════════════════ -->
-<!-- <section id="projects" class="section section--tinted" aria-labelledby="projects-h2">
-  <div class="wrap">
-
-    <div class="sr" style="margin-bottom:48px;">
-      <p class="eyebrow">Portfolio</p>
-      <h2 id="projects-h2" class="h2">Featured <em>Projects</em></h2>
-      <p class="lead">A selection of real-world and academic projects built with modern tech stacks.</p>
-    </div>
-
-    <div class="proj-grid">
-
-      <article class="proj-card sr d1">
-        <div class="proj-top">
-          <span class="proj-type">Full-Stack</span>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-        </div>
-        <h3>University Management System</h3>
-        <p>Complete academic management with student registration, course management, grade tracking, and admin dashboard.</p>
-        <div class="proj-techs">
-          <span class="chip chip-p">React</span>
-          <span class="chip chip-n">.NET Core</span>
-          <span class="chip chip-g">SQL Server</span>
-          <span class="chip chip-g">JWT</span>
-        </div>
-      </article>
-
-      <article class="proj-card sr d2">
-        <div class="proj-top">
-          <span class="proj-type">Web App</span>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-        </div>
-        <h3>Inventory &amp; Admin Dashboard</h3>
-        <p>Real-time inventory tracking with role-based access, analytics charts, and CRUD operations for business management.</p>
-        <div class="proj-techs">
-          <span class="chip chip-p">Vite</span>
-          <span class="chip chip-n">ASP.NET</span>
-          <span class="chip chip-g">PostgreSQL</span>
-          <span class="chip chip-g">Docker</span>
-        </div>
-      </article>
-
-      <article class="proj-card sr d3">
-        <div class="proj-top">
-          <span class="proj-type">API System</span>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-        </div>
-        <h3>Secure REST API Platform</h3>
-        <p>Scalable REST API with JWT authentication, Entity Framework Core data access, Swagger docs, and clean layered architecture.</p>
-        <div class="proj-techs">
-          <span class="chip chip-n">.NET 8</span>
-          <span class="chip chip-n">EF Core</span>
-          <span class="chip chip-g">SQL Server</span>
-          <span class="chip chip-g">Swagger</span>
-        </div>
-      </article>
-
-      <article class="proj-card sr d1">
-        <div class="proj-top">
-          <span class="proj-type">Frontend</span>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-        </div>
-        <h3>E-Commerce Web Interface</h3>
-        <p>Modern storefront with product filtering, cart management, responsive design, and smooth user experience.</p>
-        <div class="proj-techs">
-          <span class="chip chip-p">React</span>
-          <span class="chip chip-p">Tailwind CSS</span>
-          <span class="chip chip-g">Vite</span>
-          <span class="chip chip-g">REST API</span>
-        </div>
-      </article>
-
-      <article class="proj-card sr d2">
-        <div class="proj-top">
-          <span class="proj-type">Academic</span>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-        </div>
-        <h3>Library Management System</h3>
-        <p>Full-featured library CRUD with book borrowing workflows, member management, fine calculations, and reporting.</p>
-        <div class="proj-techs">
-          <span class="chip chip-n">.NET MVC</span>
-          <span class="chip chip-g">SQL Server</span>
-          <span class="chip chip-g">Bootstrap</span>
-          <span class="chip chip-g">EF Core</span>
-        </div>
-      </article>
-
-      <article class="proj-card sr d3">
-        <div class="proj-top">
-          <span class="proj-type">Cloud / DevOps</span>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="proj-gh" aria-label="View on GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-        </div>
-        <h3>Dockerized Deployment Pipeline</h3>
-        <p>Containerized full-stack application on Azure with Docker Compose, automated GitHub CI/CD, and environment-based config.</p>
-        <div class="proj-techs">
-          <span class="chip chip-g">Docker</span>
-          <span class="chip chip-g">Azure</span>
-          <span class="chip chip-g">GitHub Actions</span>
-          <span class="chip chip-n">.NET</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section> -->
-
-
-<!-- ══════════════════════════════════════════════════════
+  <!-- ══════════════════════════════════════════════════════
      CONTACT
-══════════════════════════════════════════════════════ -->
-<section id="contact" class="section section--tinted" aria-labelledby="contact-h2">
-  <div class="wrap">
+  ══════════════════════════════════════════════════════ -->
+  <section id="contact" class="section section--tinted" aria-labelledby="contact-h2">
+    <div class="wrap">
 
-    <div class="sr" style="margin-bottom:48px;">
-      <p class="eyebrow">Get In Touch</p>
-      <h2 id="contact-h2" class="h2">Have a project in mind? <em>Let’s build it.</em></h2>
-      <p class="lead">I’m available for web applications, mobile apps, and custom software development. Share your requirements, and I’ll get back to you to discuss the best way forward.</p>
-    </div>
-
-    <div class="contact-grid">
-
-      <!-- Info -->
-      <div class="sr sr-l">
-        <h3 class="contact-info-h3">Let's build something great</h3>
-        <p class="contact-info-p">
-          Whether you have a specific project requirement or just want to explore possibilities
-          I'd love to hear from you. Reach out through the form or any of the channels below.
-        </p>
-
-        <div class="contact-items">
-          <a href="mailto:hello@tailcoded.studio" class="contact-item" id="contact-email" aria-label="Email Tailcoded Studio">
-            <img src="images/gmail-svgrepo-com.svg" alt="Location" width="43"/>
-            <div>
-              <span class="contact-item-lbl">Email</span>
-              <span class="contact-item-val">nipunmanusha2003@gmail.com</span>
-            </div>
-          </a>
-
-          <a href="https://wa.me/94767738985" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-whatsapp" aria-label="Message on WhatsApp">
-            <img src="images/whatsapp-svgrepo-com.svg" alt="Location" width="43"/>
-            <div>
-              <span class="contact-item-lbl">WhatsApp Business</span>
-              <span class="contact-item-val">+94 76 773 8985</span>
-            </div>
-          </a>
-
-          <!-- <div class="contact-item">
-            <div class="contact-item-icon ci-b" aria-hidden="true">
-              <img src="images/location-filled-svgrepo-com.svg" alt="Location" width="20"/>
-            </div>
-            <div>
-              <span class="contact-item-lbl">Location</span>
-              <span class="contact-item-val">Sri Lanka 🇱🇰</span>
-            </div>
-          </div> -->
-        </div>
-
-        <div class="contact-info-p">
-          Usually replies within 24-48 hours
-        </div>
+      <div class="sr" style="margin-bottom:48px;">
+        <p class="eyebrow">Get In Touch</p>
+        <h2 id="contact-h2" class="h2">Have a project in mind? <span class="grad-text">Let’s build it.</span></h2>
+        <p class="lead">I’m available for web applications, mobile apps, and custom software development. Share your requirements, and I’ll get back to you to discuss the best way forward.</p>
       </div>
 
-      <!-- Form -->
-      <div class="contact-form sr sr-r">
-        <h3 class="form-title">Send a Message</h3>
+      <div class="contact-grid">
 
-        <div id="form-body">
-          <form id="contact-form" action="https://formspree.io/f/xgojpaly" method="POST" novalidate>
-            <div class="form-group">
-              <label class="form-label" for="contact-name">Your Name</label>
-              <input class="form-input" type="text" id="contact-name" name="name" placeholder="Name" required autocomplete="name" />
-              <span class="form-error-msg" id="name-error-msg"></span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-email-field">Email Address</label>
-              <input class="form-input" type="email" id="contact-email-field" name="email" placeholder="name@example.com" required autocomplete="email" />
-              <span class="form-error-msg" id="email-error-msg"></span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-subject">Subject</label>
-              <input class="form-input" type="text" id="contact-subject" name="subject" placeholder="Project Title" />
-              <span class="form-error-msg" id="subject-error-msg"></span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-message">Your Message</label>
-              <textarea class="form-textarea" id="contact-message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
-              <span class="form-error-msg" id="message-error-msg"></span>
-            </div>
-            <button type="submit" class="form-submit" id="contact-submit-btn">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-              Send Message
-            </button>
-          </form>
-        </div>
+        <!-- Info cards -->
+        <div class="sr sr-l">
+          <h3 class="contact-info-h3">Let's build something great</h3>
+          <p class="contact-info-p">
+            Whether you have a specific project requirement or just want to explore possibilities,
+            I'd love to hear from you. Reach out through the form or any of the channels below.
+          </p>
 
-        <div id="form-success" class="form-success" aria-live="polite">
-          <div class="form-success-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <div class="contact-items">
+            <a href="mailto:nipunmanusha2003@gmail.com" class="contact-item" id="contact-email"
+              aria-label="Email Tailcoded Studio">
+              <img src="images/gmail-svgrepo-com.svg" width="35" alt=""/>
+              <div>
+                <span class="contact-item-lbl">Email</span>
+                <span class="contact-item-val">nipunmanusha2003@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/94767738985" target="_blank" rel="noopener noreferrer" class="contact-item"
+              id="contact-whatsapp" aria-label="Message on WhatsApp">
+              <img src="images/whatsapp-svgrepo-com.svg" width="35" alt=""/>
+              <div>
+                <span class="contact-item-lbl">WhatsApp Business</span>
+                <span class="contact-item-val">+94 76 773 8985</span>
+              </div>
+            </a>
           </div>
-          <h3>Message Sent! 🎉</h3>
-          <p>Thanks for reaching out. I'll get back to you within 24–48 hours.</p>
+
+          <div class="contact-info-p response-tagline">
+            <br>
+            Usually replies within 24-48 hours
+          </div>
         </div>
+
+        <!-- Premium Glass Form -->
+        <div class="contact-form sr sr-r">
+          <div class="form-glow"></div>
+          <h3 class="form-title">Send a Message</h3>
+
+          <div id="form-body">
+            <form id="contact-form" action="https://formspree.io/f/xgojpaly" method="POST" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Your Name</label>
+                <input class="form-input" type="text" id="contact-name" name="name" placeholder="Name" required
+                  autocomplete="name" />
+                <span class="form-error-msg" id="name-error-msg"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email-field">Email Address</label>
+                <input class="form-input" type="email" id="contact-email-field" name="email"
+                  placeholder="name@example.com" required autocomplete="email" />
+                <span class="form-error-msg" id="email-error-msg"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input class="form-input" type="text" id="contact-subject" name="subject" placeholder="Project Title" required />
+                <span class="form-error-msg" id="subject-error-msg"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Your Message</label>
+                <textarea class="form-textarea" id="contact-message" name="message"
+                  placeholder="Tell me about your project or idea..." required></textarea>
+                <span class="form-error-msg" id="message-error-msg"></span>
+              </div>
+
+              <button type="submit" class="form-submit btn-magnetic" id="contact-submit-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div id="form-success" class="form-success" aria-live="polite">
+            <div class="form-success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3>Message Sent!</h3>
+            <p>Thanks for reaching out. I'll get back to you within 24–48 hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-glow"></div>
+    <div class="wrap">
+      <div class="footer-top">
+        <a href="#hero" class="footer-logo" aria-label="Tailcoded Studio — back to top">
+          <img src="images/tailcoded-logo-bw.png" alt="Tailcoded Studio" class="footer-logo-img" />
+        </a>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#hero">Home</a>
+          <a href="#about">Vision</a>
+          <a href="#services">Services</a>
+          <a href="#why">Why Me</a>
+          <!-- <a href="#projects">Projects</a> -->
+          <a href="#developer">Developer</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
 
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Tailcoded Studio. All rights reserved.</p>
+        <p class="footer-tagline">Built by a solo developer with passion for clean code.</p>
+      </div>
     </div>
+  </footer>
+
+
+  <!-- Scroll-down hint (shown at top of page) -->
+  <div id="scroll-hint" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19" />
+      <polyline points="19 12 12 19 5 12" />
+    </svg>
+    <span>Scroll Down</span>
   </div>
-</section>
 
+  <!-- Scroll-to-top button (shown after scrolling) -->
+  <button id="scroll-top" aria-label="Scroll to top of page">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg>
+  </button>
 
-<!-- ══════════════════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════════════════ -->
-<footer role="contentinfo">
-  <div class="wrap">
-    <div class="footer-top">
-      <a href="#hero" class="footer-logo" aria-label="Tailcoded Studio — back to top">
-        <img src="images/tailcoded-logo-bw.png" alt="Tailcoded Studio" class="footer-logo-img" />
-      </a>
-
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#hero">Home</a>
-        <a href="#about">Vision</a>
-        <a href="#services">Services</a>
-        <a href="#why">Why Me</a>
-        <a href="#developer">Developer</a>
-        <!-- <a href="#projects">Projects</a> -->
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Tailcoded Studio. All rights reserved.</p>
-      <p class="footer-tagline">Built by a solo developer with passion for clean code.</p>
-    </div>
-  </div>
-</footer>
-
-
-<!-- Scroll-down hint (shown at top of page) -->
-<div id="scroll-hint" aria-hidden="true">
-  <svg viewBox="0 0 24 24">
-    <path d="M12 5v14M5 12l7 7 7-7"/>
-  </svg>
-  <span>Scroll Down</span>
-</div>
-
-<!-- Scroll-to-top button (shown after scrolling) -->
-<button id="scroll-top" aria-label="Scroll to top of page">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 19V5M5 12l7-7 7 7"/>
-  </svg>
-</button>
-
-<script src="script/main.js"></script>
+  <script src="script/main.js"></script>
 </body>
+
 </html>
